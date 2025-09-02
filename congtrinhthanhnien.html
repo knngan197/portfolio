@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công Trình Thanh Niên - Đặng Thị Kim Ngân</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .projects, .contact { display: block !important; min-height: 200px !important; }
+        .fade-in { opacity: 1 !important; transform: translateY(0) !important; }
+
+        /* Read More Functionality */
+        .experience-text {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .experience-hidden {
+            display: none;
+        }
+
+        .read-more {
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            margin-top: 0.5rem;
+            box-shadow: var(--glow);
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .experience-text.expanded .experience-hidden {
+            display: inline;
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+        }
+
+        .carousel-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .carousel-item.active {
+            display: block;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(31, 26, 68, 0.7);
+            color: var(--text-primary);
+            border: none;
+            padding: 0.75rem;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .carousel-control:hover {
+            background: var(--gradient-2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-control.prev {
+            left: 15px;
+        }
+
+        .carousel-control.next {
+            right: 15px;
+        }
+
+        /* Project Card Spacing */
+        .project-card {
+            margin-bottom: 2rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-tech {
+            margin: 1rem 0;
+        }
+
+        .experience {
+            margin-top: 1.5rem;
+        }
+
+        .experience h4 {
+            margin-bottom: 1rem;
+        }
+
+        /* Ensure project-image compatibility */
+        .project-image {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="snowfall"></div>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">Đặng Thị Kim Ngân</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <span>Light Mode</span>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+            <div class="floating-shape shape-5"></div>
+        </div>
+        <div class="container hero-content">
+            <!-- <h1 class="design-text"></h1> -->
+            <h2 class="hero-title">Công Trình Thanh Niên</h2>
+            <p class="hero-description">Khám phá hành trình của tôi trong các công trình thanh niên, từ xây dựng cơ sở hạ tầng nông thôn, sửa chữa trường học, đến tổ chức các chương trình giáo dục cộng đồng.</p>
+            <a href="#congtrinh" class="btn btn-primary">Xem chi tiết</a>
+        </div>
+    </section>
+    <section id="congtrinh" class="workshops">
+        <div class="container">
+            <h2 class="section-title">Các Công Trình Thanh Niên Nổi Bật</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="carousel">
+                            <div class="carousel-inner">
+                                <img src="assets/cttn1.png" alt="Bridge Construction" class="carousel-item active">
+                                <img src="assets/cttn2.png" alt="Community Work" class="carousel-item">
+                                <img src="assets/cttn3.png" alt="Team Effort" class="carousel-item">
+                               
+                            </div>
+                            <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Dọn dẹp vệ sinh, làm cỏ khu vực công trình thanh niên “Học tập xanh”</h3>
+                        <p>Nhằm thực hiện tốt công trình, phần việc thanh niên chào mừng Đại hội Đoàn các cấp. BCH Đoàn khoa KT&CN tổ chức hoạt động dọn dẹp vệ sinh, làm cỏ khu vực công trình thanh niên “Học tập xanh” do Đoàn khoa phụ trách. </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Tình Nguyện</span>
+                            <span class="tech-tag">Xây Dựng</span>
+                            <span class="tech-tag">Hỗ Trợ Cộng Đồng</span>
+                        </div>
+                        <div class="experience">
+                            <h4>Trải nghiệm cá nhân</h4>
+                            <p class="experience-text">Môi trường mà hàng ngày chúng ta đang sống chính là ngôi nhà, làng quê và mái trường. Trong đó mái trường là nơi chúng ta cùng nhau học tập, vui chơi. 
+
+                                <span class="experience-hidden">Để việc học tập đạt kết quả cao, chúng ta phải xây dựng một môi trường học tập trong lành, để mái trường của chúng ta đúng là ngôi nhà thứ hai, ngôi nhà chung của tất cả chúng ta.
+Vậy chúng ta cần phải làm những gì để có được một mái trường xanh, sạch, đẹp. Mái trường của chúng mình đã đẹp, đã sạch rồi, chúng ta cần phải gìn giữ để ngày càng đẹp hơn, sách hơn..</span>
+                                <button class="read-more">Xem thêm</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="carousel">
+                            <div class="carousel-inner">
+                                <img src="assets/cttn4.jpg" alt="Education Program" class="carousel-item active">
+                                <img src="assets/cttn5.jpg" alt="Community Teaching" class="carousel-item">
+                                <img src="assets/cttn6.jpg" alt="Youth Activity" class="carousel-item">
+                            </div>
+                            <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Chiến dịch thanh niên tình nguyện hè </h3>
+                        <p>Tham gia dọn dẹp rác thải và trồng cây xanh tại các khu vực công cộng, góp phần nâng cao nhận thức về bảo vệ môi trường và cải thiện cảnh quan cộng đồng.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Tình Nguyện</span>
+                            <span class="tech-tag">Bảo Vệ Môi Trường</span>
+                            <span class="tech-tag">Trồng Cây Xanh</span>
+                        </div>
+                       <div class="experience">
+                            <h4>Trải nghiệm cá nhân</h4>
+                            <p class="experience-text">Tham gia chiến dịch dọn dẹp rác và trồng cây xanh là một trải nghiệm đầy cảm hứng. Tôi đã chứng kiến sự thay đổi tích cực trong môi trường sống của cộng đồng.
+
+                                <span class="experience-hidden">Tôi cùng các tình nguyện viên dọn dẹp rác thải tại công viên và bãi biển, đồng thời tham gia trồng hàng chục cây xanh để tạo bóng mát và cải thiện không khí. Việc phối hợp với đội nhóm và người dân địa phương giúp tôi học được cách tổ chức công việc hiệu quả. Những hàng cây non và không gian sạch sẽ hơn là động lực lớn lao để tôi tiếp tục cống hiến. Trải nghiệm này không chỉ giúp tôi rèn luyện kỹ năng làm việc nhóm mà còn khơi dậy niềm đam mê bảo vệ môi trường.</span>
+                                <button class="read-more">Xem thêm</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <div class="container contact-content">
+            <h2 class="section-title">Liên hệ</h2>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>iamkimngan197@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+84 795 405 536</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Vinh Xuan, TP. Vinh Long</span>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Đặng Thị Kim Ngân. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Carousel Functionality
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const items = carousel.querySelectorAll('.carousel-item');
+            const prevBtn = carousel.querySelector('.carousel-control.prev');
+            const nextBtn = carousel.querySelector('.carousel-control.next');
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                items.forEach((item, i) => {
+                    item.classList.toggle('active', i === index);
+                });
+            }
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex === 0) ? items.length - 1 : currentIndex - 1;
+                showSlide(currentIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
+                showSlide(currentIndex);
+            });
+
+            // Auto-slide every 5 seconds
+            setInterval(() => {
+                currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
+                showSlide(currentIndex);
+            }, 5000);
+        });
+
+        // Read More Functionality
+        document.querySelectorAll('.read-more').forEach(button => {
+            button.addEventListener('click', () => {
+                const textContainer = button.parentElement;
+                textContainer.classList.toggle('expanded');
+                button.textContent = textContainer.classList.contains('expanded') ? 'Ẩn bớt' : 'Xem thêm';
+            });
+        });
+    </script>
+</body>
+</html>

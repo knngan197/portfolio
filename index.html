@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặng Thị Kim Ngân - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">Đặng Thị Kim Ngân</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <span>Light Mode</span>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+            <div class="floating-shape shape-5"></div>
+            <div class="cute-animal cat" data-animal="cat"></div>
+            <div class="cute-animal bunny" data-animal="bunny"></div>
+            <div class="cute-animal panda" data-animal="panda"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="design-text">design</div>
+            <div class="profile-image">
+                <img src="assets/anh 3x4.jpg" alt="Profile">
+            </div>
+            <h1 class="hero-title">Xin chào, tôi là <span class="gradient-glow">Đặng Thị Kim Ngân</span></h1>
+            <p class="hero-description">Đam mê phát triển với tư duy sáng tạo và định hướng trải nghiệm người dùng làm trung tâm.</p>
+            <div class="hero-buttons">
+                 <a href="#contact" class="btn btn-secondary">Liên hệ</a>
+                <a href="assets/CV_DangThiKimNgan.pdf" class="btn btn-primary">Tải CV</a>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Player (Simplified for single song) -->
+    <!-- <div class="music-player">
+        <div class="music-info">
+            <div class="music-icon"><i class="fas fa-music"></i></div>
+            <div class="music-details">
+                <div class="song-title">Loving You</div>
+                <div class="artist">prazkhanal</div>
+            </div>
+        </div>
+        <div class="music-controls">
+            <button class="control-btn play-btn"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="volume-control">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="1">
+        </div>
+        <div class="music-progress">
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+            <div class="time-info">
+                <span>0:00</span>
+                <span>2:45</span>
+            </div>
+        </div>
+        <audio id="music"></audio>
+    </div> -->
+
+   <!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title">Về tôi</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Tôi là một sinh viên mới tốt nghiệp với niềm đam mê mãnh liệt trong lĩnh vực lập trình và phát triển ứng dụng web. Tôi luôn hào hứng học hỏi các công nghệ mới, sẵn sàng đối mặt với thử thách để nâng cao kỹ năng và tạo ra những sản phẩm mang lại giá trị cho người dùng.</p>
+            </div>
+           <div class="activities">
+             <div class="activity-item">
+                
+                <img src="assets/Workshop1.jpg" alt="Hoạt động 3" class="activity-image">
+                <a href="workshop.html" class="activity-link"><h3>Workshop Phát triển và cuộc thi</h3></a> 
+                <p>Khám phá hành trình của tôi trong việc chia sẻ kiến thức và học hỏi qua các workshop công nghệ, từ phát triển web đến ứng dụng AI.</p>
+            </div>
+            <div class="activity-item">
+                <img src="assets\ctxh1.png" alt="Hoạt động 1" class="activity-image">
+                <a href="community.html" class="activity-link"><h3>Công tác xã hội</h3></a>
+                <p>Khám phá hành trình của tôi trong các hoạt động công tác xã hội, từ tình nguyện cộng đồng đến tổ chức các sự kiện mang lại giá trị cho xã hội.</p>
+            </div>
+            <div class="activity-item">
+                <img src="assets/venguon1.png" alt="Hoạt động 3" class="activity-image">
+                <a href="vennguon.html" class="activity-link"><h3>Về nguồn</h3></a>
+                <p>Khám phá hành trình của tôi trong các hoạt động Về Nguồn, từ thăm viếng di tích lịch sử, chăm sóc người có công, đến tổ chức các sự kiện văn hóa truyền thống.</p>
+            </div>
+              <div class="activity-item">
+                <img src="assets/cttn1.png" alt="Hoạt động 3" class="activity-image">
+                 <a href="congtrinhthanhnien.html" class="activity-link"><h3>Công trình thanh niên</h3></a>
+                <p>Khám phá hành trình của tôi trong các công trình thanh niên, từ xây dựng cơ sở hạ tầng nông thôn, đến tổ chức các chương trình giáo dục cộng đồng.</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Ngôn ngữ lập trình</h2>
+            <div class="skills-track">
+                <div class="skills-runner">
+                    <div class="running-skill">
+                        <div class="skill-icon css3"><i class="fab fa-css3-alt"></i></div>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon javascript"><i class="fab fa-js-square"></i></div>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon python"><i class="fab fa-python"></i></div>
+                        <span>Python</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon cpp"><i class="fas fa-code"></i></div>
+                        <span>C++</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon html5"><i class="fab fa-html5"></i></div>
+                        <span>HTML5</span>
+                    </div>
+                    <!-- Duplicates for loop -->
+                    <div class="running-skill">
+                        <div class="skill-icon css3"><i class="fab fa-css3-alt"></i></div>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon javascript"><i class="fab fa-js-square"></i></div>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon python"><i class="fab fa-python"></i></div>
+                        <span>Python</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon cpp"><i class="fas fa-code"></i></div>
+                        <span>C++</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon html5"><i class="fab fa-html5"></i></div>
+                        <span>HTML5</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Công nghệ</h2>
+            <div class="skills-track">
+                <div class="skills-runner reverse">
+                    <div class="running-skill">
+                        <div class="skill-icon github"><i class="fab fa-github"></i></div>
+                        <span>Github</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon vscode"><i class="fas fa-code"></i></div>
+                        <span>VS Code</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon visual-studio"><i class="fas fa-laptop-code"></i></div>
+                        <span>Visual Studio</span>
+                    </div>
+                    
+                    <div class="running-skill">
+                        <div class="skill-icon sdl"><i class="fas fa-gamepad"></i></div>
+                        <span>SDL 3</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon opencv"><i class="fas fa-eye"></i></div>
+                        <span>OpenCV</span>
+                    </div>
+                    <!-- Duplicates for loop -->
+                    <div class="running-skill">
+                        <div class="skill-icon github"><i class="fab fa-github"></i></div>
+                        <span>Github</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon vscode"><i class="fas fa-code"></i></div>
+                        <span>VS Code</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon visual-studio"><i class="fas fa-laptop-code"></i></div>
+                        <span>Visual Studio</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon cmake"><i class="fas fa-cogs"></i></div>
+                        <span>CMake</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon sdl"><i class="fas fa-gamepad"></i></div>
+                        <span>SDL 3</span>
+                    </div>
+                    <div class="running-skill">
+                        <div class="skill-icon opencv"><i class="fas fa-eye"></i></div>
+                        <span>OpenCV</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Dự án nổi bật</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/web.jpg" alt="Project 2">
+                    </div>
+                    <div class="project-content">
+                        <h3>Website Bán Sách Trực Tuyến (Online Bookstore Platform)</h3>
+                        <p>Phát triển một nền tảng thương mại điện tử đầy đủ chức năng để bán sách, bao gồm đăng ký/đăng nhập, tìm kiếm/lọc sản phẩm, giỏ hàng, đặt hàng, đánh giá, quản lý đơn hàng, và admin dashboard cho quản trị viên (quản lý sản phẩm, danh mục, khuyến mãi, thống kê).</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML/CSS/JavaScript</span>
+                            <span class="tech-tag">PHP(Laravel)</span>
+                            <span class="tech-tag">Laravel Livewire</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                         <div class="button-container">
+                         <a href="https://github.com/dangngan123/cn-da21ttc-dangthikimngan-ebooks-laravel.git" target="_blank" class="view-details">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/chatbot.jpg" alt="Project 1">
+                    </div>
+                    <div class="project-content">
+                        <h3>Chatbot Hỗ Trợ Khách Hàng (AI Customer Support Chatbot)</h3>
+                        <p>Xây dựng chatbot sử dụng RAG (Retrieval-Augmented Generation) để trả lời câu hỏi người dùng về sản phẩm, đơn hàng, thanh toán, đổi trả. Chatbot lấy ngữ cảnh từ lịch sử hội thoại và dữ liệu thực tế (như đơn hàng, chính sách) trước khi generate câu trả lời, giảm "ảo giác" AI.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Google Gemini 1.5 Flash API (LLM)</span>
+                            <span class="tech-tag">Laravel với package Prism để tích hợp API</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Eloquent ORM</span>
+                        </div>
+                        <div class="button-container">
+                         <a href="https://github.com/dangngan123/tn-da21ttc-110121146-dangthikimngan-webbansachdexuat-ai-laravel.git" target="_blank" class="view-details">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/dexuat.jpg" alt="Project 3">
+                    </div>
+                    <div class="project-content">
+                        <h3>Hệ Thống Đề Xuất Sách Cá Nhân Hóa (Personalized Book Recommendation System)</h3>
+                        <p>Phát triển hệ thống gợi ý sách dựa trên hành vi người dùng (xem, thêm giỏ hàng, mua) và nội dung sách. Sử dụng mô hình lai kết hợp collaborative filtering và content-based để đề xuất sách phù hợp, giải quyết vấn đề "cold start" và tăng trải nghiệm người dùng.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python với Scikit-learn (TF-IDF, Cosine Similarity, SVD, ALS)</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                        <div class="button-container">
+                         <a href="https://github.com/dangngan123/tn-da21ttc-110121146-dangthikimngan-webbansachdexuat-ai-laravel.git" target="_blank" class="view-details">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Liên hệ</h2>
+            <div class="contact-content">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>iamkimngan197@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+84 795 405 536</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Vinh Xuan, TP. Vinh Long</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/%C4%91%E1%BA%B7ng-th%E1%BB%8B-kim-ng%C3%A2n-90aa562b9/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/dangngan123" class="social-link"><i class="fab fa-github"></i></a>
+                    <!-- <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> -->
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+     <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Đặng Thị Kim Ngân. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+      <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9772fe3808890468',t:'MTc1NjU0MzMyOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
+</html>

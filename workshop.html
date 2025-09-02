@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Phát triển - Đặng Thị Kim Ngân</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .projects, .contact { display: block !important; min-height: 200px !important; }
+        .fade-in { opacity: 1 !important; transform: translateY(0) !important; }
+
+        /* Read More Functionality */
+        .experience-text {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1rem; /* Thêm khoảng cách dưới phần văn bản */
+        }
+
+        .experience-hidden {
+            display: none;
+        }
+
+        .read-more {
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            margin-top: 0.5rem;
+            box-shadow: var(--glow);
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .experience-text.expanded .experience-hidden {
+            display: inline;
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 250px; /* Tăng chiều cao để hình ảnh rõ hơn */
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem; /* Thêm khoảng cách dưới carousel */
+        }
+
+        .carousel-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .carousel-item.active {
+            display: block;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(31, 26, 68, 0.7);
+            color: var(--text-primary);
+            border: none;
+            padding: 0.75rem; /* Tăng padding cho nút điều khiển */
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .carousel-control:hover {
+            background: var(--gradient-2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-control.prev {
+            left: 15px; /* Tăng khoảng cách từ mép trái */
+        }
+
+        .carousel-control.next {
+            right: 15px; /* Tăng khoảng cách từ mép phải */
+        }
+
+        /* Project Card Spacing */
+        .project-card {
+            margin-bottom: 2rem; /* Thêm khoảng cách dưới mỗi card */
+        }
+
+        .project-content {
+            padding: 2rem; /* Tăng padding bên trong project-content */
+        }
+
+        .project-tech {
+            margin: 1rem 0; /* Thêm khoảng cách trên/dưới danh sách công nghệ */
+        }
+
+        .experience {
+            margin-top: 1.5rem; /* Thêm khoảng cách trên phần trải nghiệm */
+        }
+
+        .experience h4 {
+            margin-bottom: 1rem; /* Thêm khoảng cách dưới tiêu đề trải nghiệm */
+        }
+
+        /* Ensure project-image compatibility */
+        .project-image {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="snowfall"></div>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">Đặng Thị Kim Ngân</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <span>Light Mode</span>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+            <div class="floating-shape shape-5"></div>
+        </div>
+        <div class="container hero-content">
+            <!-- <h1 class="design-text">Workshop</h1> -->
+            <h2 class="hero-title">Workshop Phát triển</h2>
+            <p class="hero-description">Khám phá hành trình của tôi trong việc chia sẻ kiến thức và học hỏi qua các workshop công nghệ, từ phát triển web đến ứng dụng AI.</p>
+            <a href="#workshops" class="btn btn-primary">Xem chi tiết</a>
+        </div>
+    </section>
+    <!-- Workshops Section -->
+    <section id="workshops" class="workshops">
+        <div class="container">
+            <h2 class="section-title">Các Workshop - Cuộc thi nổi bật</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="carousel">
+                            <div class="carousel-inner">
+                                <img src="assets/Workshop1.jpg" alt="Workshop React & Node.js" class="carousel-item active">
+                                <img src="assets/Workshop2.jpg" alt="Team Collaboration" class="carousel-item">
+                                <img src="assets/Workshop3.jpg" alt="Coding Session" class="carousel-item">
+                                <img src="assets/Workshop4.jpg" alt="Development Environment" class="carousel-item">
+                                <img src="assets/Workshop5.jpg" alt="Group Discussion" class="carousel-item">
+                            </div>
+                            <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Trải nghiệm quy trình phát triển dự án phần mềm</h3>
+                        <p>Chia sẻ kinh nghiệm làm việc trong lĩnh vực IT, giúp các sinh viên hiểu rõ về mô hình lập trình Full-stack Web Developer, nắm được quy trình phát triển dự án phần mềm với Agile/Scrum, cách quản lý source code với Git/Github…</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Full-stack Web Developer</span>
+                            <span class="tech-tag">Git/Github</span>
+                            <span class="tech-tag">Agile/Scrum</span>
+                        </div>
+                        <div class="experience">
+                            <h4>Trải nghiệm cá nhân</h4>
+                            <p class="experience-text">Workshop Trải nghiệm quy trình phát triển dự án phần mềm". Ban đầu, mình đến với workshop chỉ với tâm thế học hỏi thêm kiến thức, nhưng những gì mình nhận lại được còn lớn hơn thế rất nhiều.
+
+Workshop không chỉ là nơi chia sẻ kinh nghiệm làm việc trong lĩnh vực IT một cách khô khan, mà là một hành trình thực sự đưa chúng mình từ lý thuyết đến thực tiễn. Lần đầu tiên, những khái niệm như "Full-stack Web Developer" không còn là những gạch đầu dòng trong sách vở. Tụi mình đã hiểu rõ cách một trang web "sống" và "thở" như thế nào, từ giao diện người dùng (Front-end) đẹp mắt đến hệ thống xử lý logic phức tạp (Back-end).
+
+                                <span class="experience-hidden">Tuy nhiên, điều đắt giá nhất chính là việc được "sống" trong một quy trình phát triển phần mềm thực thụ với Agile/Scrum. Không chỉ là viết code, đó là nghệ thuật làm việc nhóm, là cách chia nhỏ công việc, lên kế hoạch trong từng "Sprint" và giao tiếp liên tục. Việc quản lý source code với Git/Github cũng được hướng dẫn cực kỳ chi tiết, giúp tụi mình hiểu ra đây chính là "bảo bối" để tránh những thảm họa "mất code" hay xung đột khi làm việc chung.
+
+Và đây là phần mình tâm đắc nhất: trải nghiệm của bản thân trong workshop này. Em hiểu rằng kiến thức chỉ là một phần, phần còn lại chính là bản lĩnh và kỹ năng mềm. Tụi em được chia thành các đội, cùng nhau lên ý tưởng và phát triển một dự án mini. Đó là những ngày chạy deadline thực sự, cùng nhau tranh luận, cùng nhau sửa lỗi. Từ đó, chúng em đã rèn luyện được rất nhiều kỹ năng để đến với buổi bảo vệ đầy “căng thẳng”, “kịch tính”.
+
+Buổi bảo vệ cuối cùng thực sự là một trận "chung kết". Áp lực thời gian, những câu hỏi phản biện sắc bén từ các chuyên gia, và cả sự hồi hộp khi lần đầu trình bày "đứa con tinh thần" của cả nhóm. Nhưng thật bất ngờ, chính nhờ quá trình làm việc chuyên nghiệp trước đó, những ý tưởng, sản phẩm demo đưa ra đầy thuyết phục và nhận được đánh giá cao từ phía các chuyên gia.
+
+Niềm vui vỡ òa khi công sức của cả đội được công nhận. Hơn thế nữa, có những phần quà và học bổng khóa học vô cùng giá trị được trao cho những đội xuất sắc. Đây không chỉ là món quà vật chất, mà còn là sự khích lệ tinh thần to lớn, tiếp thêm động lực cho chúng em trên con đường sự nghiệp sau này.
+
+Rời khỏi workshop, em không chỉ mang về kiến thức, mà còn là sự tự tin và một cái nhìn rõ ràng hơn về con đường mình sẽ đi. Cảm ơn ban tổ chức đã tạo ra một sân chơi bổ ích và thực tế đến vậy</span>
+                                <button class="read-more">Xem thêm</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="project-card">
+                    <div class="project-image">
+                        <div class="carousel">
+                            <div class="carousel-inner">
+                                <img src="assets/hoithi1.png" alt="Workshop React & Node.js" class="carousel-item active">
+                                <img src="assets/hoithi2.png" alt="Team Collaboration" class="carousel-item">
+                                <img src="assets/hoithi3.png" alt="Coding Session" class="carousel-item">
+                   
+                            </div>
+                            <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Trải nghiệm quy trình phát triển dự án phần mềm</h3>
+                        <p>Chia sẻ kinh nghiệm làm việc trong lĩnh vực IT, giúp các sinh viên hiểu rõ về mô hình lập trình Full-stack Web Developer, nắm được quy trình phát triển dự án phần mềm với Agile/Scrum, cách quản lý source code với Git/Github…</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Full-stack Web Developer</span>
+                            <span class="tech-tag">Git/Github</span>
+                            <span class="tech-tag">Agile/Scrum</span>
+                        </div>
+                        <div class="experience">
+                            <h4>Trải nghiệm cá nhân</h4>
+                            <p class="experience-text">Workshop Trải nghiệm quy trình phát triển dự án phần mềm". Ban đầu, mình đến với workshop chỉ với tâm thế học hỏi thêm kiến thức, nhưng những gì mình nhận lại được còn lớn hơn thế rất nhiều.
+
+Workshop không chỉ là nơi chia sẻ kinh nghiệm làm việc trong lĩnh vực IT một cách khô khan, mà là một hành trình thực sự đưa chúng mình từ lý thuyết đến thực tiễn. Lần đầu tiên, những khái niệm như "Full-stack Web Developer" không còn là những gạch đầu dòng trong sách vở. Tụi mình đã hiểu rõ cách một trang web "sống" và "thở" như thế nào, từ giao diện người dùng (Front-end) đẹp mắt đến hệ thống xử lý logic phức tạp (Back-end).
+
+                                <span class="experience-hidden">Tuy nhiên, điều đắt giá nhất chính là việc được "sống" trong một quy trình phát triển phần mềm thực thụ với Agile/Scrum. Không chỉ là viết code, đó là nghệ thuật làm việc nhóm, là cách chia nhỏ công việc, lên kế hoạch trong từng "Sprint" và giao tiếp liên tục. Việc quản lý source code với Git/Github cũng được hướng dẫn cực kỳ chi tiết, giúp tụi mình hiểu ra đây chính là "bảo bối" để tránh những thảm họa "mất code" hay xung đột khi làm việc chung.
+
+Và đây là phần mình tâm đắc nhất: trải nghiệm của bản thân trong workshop này. Em hiểu rằng kiến thức chỉ là một phần, phần còn lại chính là bản lĩnh và kỹ năng mềm. Tụi em được chia thành các đội, cùng nhau lên ý tưởng và phát triển một dự án mini. Đó là những ngày chạy deadline thực sự, cùng nhau tranh luận, cùng nhau sửa lỗi. Từ đó, chúng em đã rèn luyện được rất nhiều kỹ năng để đến với buổi bảo vệ đầy “căng thẳng”, “kịch tính”.
+
+Buổi bảo vệ cuối cùng thực sự là một trận "chung kết". Áp lực thời gian, những câu hỏi phản biện sắc bén từ các chuyên gia, và cả sự hồi hộp khi lần đầu trình bày "đứa con tinh thần" của cả nhóm. Nhưng thật bất ngờ, chính nhờ quá trình làm việc chuyên nghiệp trước đó, những ý tưởng, sản phẩm demo đưa ra đầy thuyết phục và nhận được đánh giá cao từ phía các chuyên gia.
+
+Niềm vui vỡ òa khi công sức của cả đội được công nhận. Hơn thế nữa, có những phần quà và học bổng khóa học vô cùng giá trị được trao cho những đội xuất sắc. Đây không chỉ là món quà vật chất, mà còn là sự khích lệ tinh thần to lớn, tiếp thêm động lực cho chúng em trên con đường sự nghiệp sau này.
+
+Rời khỏi workshop, em không chỉ mang về kiến thức, mà còn là sự tự tin và một cái nhìn rõ ràng hơn về con đường mình sẽ đi. Cảm ơn ban tổ chức đã tạo ra một sân chơi bổ ích và thực tế đến vậy</span>
+                                <button class="read-more">Xem thêm</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <div class="container contact-content">
+            <h2 class="section-title">Liên hệ</h2>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>iamkimngan197@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+84 795 405 536</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Vinh Xuan, TP. Vinh Long</span>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Đặng Thị Kim Ngân. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Carousel Functionality
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const items = carousel.querySelectorAll('.carousel-item');
+            const prevBtn = carousel.querySelector('.carousel-control.prev');
+            const nextBtn = carousel.querySelector('.carousel-control.next');
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                items.forEach((item, i) => {
+                    item.classList.toggle('active', i === index);
+                });
+            }
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex === 0) ? items.length - 1 : currentIndex - 1;
+                showSlide(currentIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
+                showSlide(currentIndex);
+            });
+
+            // Auto-slide every 5 seconds
+            setInterval(() => {
+                currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
+                showSlide(currentIndex);
+            }, 5000);
+        });
+
+        // Read More Functionality
+        document.querySelectorAll('.read-more').forEach(button => {
+            button.addEventListener('click', () => {
+                const textContainer = button.parentElement;
+                textContainer.classList.toggle('expanded');
+                button.textContent = textContainer.classList.contains('expanded') ? 'Ẩn bớt' : 'Xem thêm';
+            });
+        });
+    </script>
+</body>
+</html>
