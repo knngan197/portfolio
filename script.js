@@ -97,22 +97,27 @@ const song = {
 }
 
 function loadSong() {
-  audio.src = song.src
-  songTitle.textContent = song.title
-  artist.textContent = song.artist
+  if (audio) audio.src = song.src
+  if (songTitle) songTitle.textContent = song.title
+  if (artist) artist.textContent = song.artist
 }
 
-loadSong()
+// Only load song if elements exist
+if (audio && songTitle && artist) {
+  loadSong()
+}
 
-playBtn.addEventListener("click", () => {
-  isPlaying = !isPlaying
-  playBtn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>'
-  if (isPlaying) {
-    audio.play()
-  } else {
-    audio.pause()
-  }
-})
+if (playBtn && audio) {
+  playBtn.addEventListener("click", () => {
+    isPlaying = !isPlaying
+    playBtn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>'
+    if (isPlaying) {
+      audio.play()
+    } else {
+      audio.pause()
+    }
+  })
+}
 
 volumeSlider.addEventListener("input", () => {
   audio.volume = volumeSlider.value
@@ -329,4 +334,49 @@ style.textContent = `
 `
 
 document.head.appendChild(style)
+
+// Contact Form Handler with redirect
+const contactForms = document.querySelectorAll('form[action*="web3forms"]')
+contactForms.forEach(form => {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault() // Prevent default form submission
+
+    const formData = new FormData(form)
+    const button = form.querySelector('button[type="submit"]')
+    const originalText = button.textContent
+
+    // Show loading state
+    button.textContent = 'Đang gửi...'
+    button.disabled = true
+
+    // Submit form via fetch
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (response.ok) {
+        // Success - redirect to thank you page
+        window.location.href = 'thankyou.html'
+      } else {
+        throw new Error('Form submission failed')
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error)
+      // Reset button on error
+      button.textContent = originalText
+      button.disabled = false
+      alert('Có lỗi xảy ra khi gửi tin nhắn. Vui lòng thử lại!')
+    })
+  })
+})
+
+
+
+
+
+
+
+
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Về Nguồn - Đặng Thị Kim Ngân</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/logo.png" sizes="500px">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
@@ -207,26 +208,51 @@
             </div>
         </div>
     </section>
-    <section id="contact" class="contact">
-        <div class="container contact-content">
+    <section id="contact" class="contact fade-in">
+        <div class="container">
             <h2 class="section-title">Liên hệ</h2>
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <span>iamkimngan197@gmail.com</span>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <span>+84 795 405 536</span>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Vinh Xuan, TP. Vinh Long</span>
-            </div>
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>iamkimngan197@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+84 795 405 536</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Vinh Xuan, TP. Vinh Long</span>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/%C4%91%E1%BA%B7ng-th%E1%BB%8B-kim-ng%C3%A2n-90aa562b9/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/dangngan123" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <!-- Contact Form -->
+                    <div id="contact-form-container">
+                        <form id="contactForm" class="custom-form" action="https://api.web3forms.com/submit" method="POST">
+                            <!-- Replace with your Access Key -->
+                            <input type="hidden" name="access_key" value="62714b48-3821-4dbd-a22c-5262b29f4865">
+
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email của bạn" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="subject" placeholder="Tiêu đề của tin nhắn" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Nội dung tin nhắn bạn muốn gửi cho tôi" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Gửi tin nhắn</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
